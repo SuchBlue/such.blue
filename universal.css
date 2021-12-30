@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Spline+Sans&display=swap');
+
+body {
+    background-color: #3C4043;
+    color: white;
+    font-family: 'Spline Sans', sans-serif;
+    text-align: center;
+    line-height: 2;
+}
+
+.header {
+    width: 300px;
+    position: relative;
+    text-align: left;
+} .header img {
+    float: left;
+    border-radius: 10%;
+} .header h1 {
+    margin-left: 3em;
+    line-height: 250%;
+}
+
+.body { display: inline-block; }
+
+.body img {
+    margin-right: 1em;
+    height: 50px;
+}
+
+footer {
+    color: lightgray;
+    opacity: 50%;
+    text-decoration: none;
+
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    height: 50px;
+}
+
+@media screen and (min-width: 692px) {
+    span {
+      line-height: 5;
+    }
+}
