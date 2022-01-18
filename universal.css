@@ -8,6 +8,13 @@ body {
     line-height: 2;
 }
 
+#music {
+    float: right;
+    margin-right: 5%;
+    text-decoration: none;
+    color: white;
+}
+
 .header {
     width: 300px;
     position: relative;
