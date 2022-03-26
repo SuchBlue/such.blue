@@ -1,6 +1,7 @@
 .particle {
     position: absolute;
     border-radius: 50%;
+    z-index: -1;
 }
 @keyframes particle-animation-1 {
     100% {
