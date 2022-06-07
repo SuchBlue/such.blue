@@ -39,66 +39,98 @@
         <div class="particle"></div>
         <div class="particle"></div>
         <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
     </div>
-
+    <noscript>sorry, you must enable javascript to get server stats :(</noscript><div></div>
     <a href="https://open.spotify.com/playlist/2lmdpqZb5ymcQ5D2XDyAzw" id="music">🎵 <u>music i listen to</u> 🎵</a>
+    <a href="https://github.com/SuchBlue/such.blue" id="music"><u>source code</u></a>
         <div class="header">
             <img src="images/profile.png" />
             <h1>SuchBlue</h1>
                 <div style="clear: both;"></div>
-        </div>
-    <div>Just your average kid trying to get his way around technology.</div>
-
-    <div><u>IDEs that I usually use</u></div>
-    <div id="connections" class="head">
-        <a href="https://www.jetbrains.com/idea/"><img src="images/ides/intellij.png"></a>
-        <a href="https://code.visualstudio.com/"><img src="images/ides/vscode.png"></a>
-        <a href="https://visualstudio.microsoft.com/"><img src="images/ides/vs2019.png"></a>
     </div>
 
-    <div><u>Operating Systems</u></div>
-    <div id="operatingsystems" class="head">
-        <div class="multiple">
-            <img src="images/oses/windows.png" />
-            <h4>Windows</h4>
-            <h4>(main)</h4>
-                <div style="clear: both;"></div>
+    <div class="center">
+        <u>Server stats</u>
+        <h4 id="status"></h4>
+        <h4 id="cpuinfo"></h4>
+        <h4 id="raminfo"></h4>
+        <div id="connections" class="head">
+            <a href="https://github.com/SuchBlue/"><img src="images/github.png"></a>
+            <a href="https://youtube.com/SuchBlue/"><img src="images/youtube.png"></a>
         </div>
         <div class="multiple">
-            <img src="images/oses/linux.gif" />
-            <h4>Linux</h4>
-            <h4>(secondary)</h4>
+            <img src="images/discord.jpg" style="height: 35px;" />
+            <h5>SuchBlue#1337</h5>
                 <div style="clear: both;"></div>
         </div>
     </div>
+    
+    <script type="application/javascript">
+        function load() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.onload = function () {
+                const responseJSON = JSON.parse(this.responseText
+                        .replace('"system.cpu"', '"systemcpu"')
+                        .replace('"system.ram"', '"systemram"'));
+                    
+                const cpuUsage = responseJSON.systemcpu.dimensions.user.value + responseJSON.systemcpu.dimensions.system.value;
 
-    <div><u>Programming languages</u></div>
-    <div id="programminglanguages" class="head">
-        <a href="https://www.python.org/"><img src="images/langs/python.png"></a>
-        <a href="https://nodejs.org/en/"><img src="images/langs/javascript.png"></a>
-        <a href="https://java.com/en/"><img src="images/langs/java.png"></a>
-        <a href="https://www.gnu.org/software/bash/"><img src="images/langs/bash.png"></a>
-    </div>
+                const totalRam = responseJSON.systemram.dimensions.used.value
+                    + responseJSON.systemram.dimensions.free.value
+                    + responseJSON.systemram.dimensions.cached.value
+                    + responseJSON.systemram.dimensions.buffers.value;
+                    
+                const ramUsage = responseJSON.systemram.dimensions.used.value;
+                document.getElementById("cpuinfo").innerText = `CPU: ${Math.round(cpuUsage * 100) / 100}%`;
+                document.getElementById("raminfo").innerText = `RAM: ${Math.round((ramUsage / totalRam) * 10000) / 100}%`;   
+            }
+            xhttp.open("GET", "https://home.such.blue/netdata/api/v1/allmetrics?format=json");
+            xhttp.onreadystatechange = () => {
+                if (xhttp.readyState !== 4) {
+                    return;
+                }
+                if (xhttp.status === 200) {
+                    document.getElementById("status").innerText = "Status: Online";
+                } else {
+                    document.getElementById("status").innerText = "Status: Offline";
+                }
+            };
+            xhttp.send();
+        }
+        load();
+        setInterval(load, 10000);
+    </script>
 
-    <div><u>Where to find me</u></div>
-    <div id="connections" class="head">
-
-        <a href="https://github.com/SuchBlue/"><img src="images/socials/github.png"></a>
-        <a href="https://youtube.com/SuchBlue/"><img src="images/socials/youtube.png"></a>
-        <a href="https://steamcommunity.com/id/suchblue"><img src="images/socials/steam.png"></a>
-        <a href="https://twitch.tv/SuchBlue_"><img src="images/socials/twitch.png"></a>
-    </div>
-    <div class="multiple">
-        <img src="images/socials/discord.jpg" style="height: 35px;" />
-        <h5>SuchBlue#1337</h5>
-            <div style="clear: both;"></div>
-    </div>
-    <footer>
-        Made with love from SuchBlue - This site is JavaScript-free. See source at
-        <a href="https://github.com/SuchBlue/such.blue" style="color: inherit;">https://github.com/SuchBlue/such.blue</a>
-        <div>Any suggestions? Submit an issue or pull request to contribute to this site!</div>
-    </footer>
-
-    <!-- credits to https://codepen.io/tutsplus/pen/MrjYJK for the particle animations -->
+    <!-- credits to https://codepen.io/tutsplus/pen/MrjYJK for the particle animations !-->
 </body>
 </html>
