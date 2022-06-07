@@ -61,9 +61,6 @@ footer {
     span {
       line-height: 5;
     }
-    #footer {
-        position: absolute;
-    }
 }
 
 .head {
