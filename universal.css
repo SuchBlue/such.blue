@@ -44,12 +44,15 @@ body {
     border-radius: 10%;
 }
 
-#footer {
+footer {
+    position: absolute;
     color: lightgray;
     opacity: 50%;
     text-decoration: none;
-    white-space: nowrap;
-    text-align: center !important;
+    bottom: 0;
+    width: 99%;
+    height: 75px;
+    line-height: 2;
 }
 
 /* Responsiveness */
