@@ -7,6 +7,8 @@ body {
     text-align: center;
 }
 
+h4 { font-weight: lighter; }
+
 .center {
     margin: 0;
     position: absolute;
