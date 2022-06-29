@@ -7,6 +7,7 @@ body {
     text-align: center;
 }
 
+#time { height: 45px; }
 h4 { font-weight: lighter; }
 
 .center {
@@ -53,7 +54,7 @@ footer {
     text-decoration: none;
     bottom: 0;
     width: 99%;
-    height: 75px;
+    height: 110px;
     line-height: 2;
 }
 

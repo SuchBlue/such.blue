@@ -99,8 +99,16 @@
         <a href="https://github.com/SuchBlue/such.blue" style="color: inherit;">https://github.com/SuchBlue/such.blue</a>
         <div>Any suggestions? Submit an issue or pull request to contribute to this site!</div>
     </footer>
+    <footer id="time"></footer>
     
-    <script type="application/javascript">
+    <script type="application/javascript">    
+        window.onload = function() {
+            var time = new Date().getTime() - window.performance.timing.navigationStart;
+            var seconds = Math.floor(time / 1000);
+            var milliseconds = time % 1000;
+            document.getElementById("time").innerHTML = `Loaded in ${seconds}.${milliseconds} seconds`;
+        }
+
         function load() {
             const xhttp = new XMLHttpRequest();
             xhttp.onload = function () {
