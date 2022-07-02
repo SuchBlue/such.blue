@@ -95,18 +95,22 @@
     </div>
 
     <footer>
-        Made with ❤️ from SuchBlue in 🇲🇹 - See source at
-        <a href="https://github.com/SuchBlue/such.blue" style="color: inherit;">https://github.com/SuchBlue/such.blue</a>
-        <div>Any suggestions? Submit an issue or pull request to contribute to this site!</div>
+        <text>
+            Made with </text>❤️<text> from SuchBlue in </text>🇲🇹<text> - See source at
+            <a href="https://github.com/SuchBlue/such.blue" style="color: inherit;">https://github.com/SuchBlue/such.blue</a>
+            <div>Any suggestions? Submit an issue or pull request to contribute to this site!</div>
+        </text>
     </footer>
     <footer id="time"></footer>
     
     <script type="application/javascript">    
         window.onload = function() {
-            var time = new Date().getTime() - window.performance.timing.navigationStart;
-            var seconds = Math.floor(time / 1000);
-            var milliseconds = time % 1000;
-            document.getElementById("time").innerHTML = `Loaded in ${seconds}.${milliseconds} seconds`;
+            let time = new Date().getTime() - window.performance.timing.navigationStart;
+            let seconds = Math.floor(time / 1000);
+            let milliseconds = time % 1000;
+            let elem = document.getElementById("time");
+            elem.innerHTML = `Loaded in ${seconds}.${milliseconds} seconds`;
+            elem.style.opacity = 0.5;
         }
 
         function load() {
