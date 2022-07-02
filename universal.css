@@ -51,12 +51,14 @@ h4 { font-weight: lighter; }
 footer {
     position: absolute;
     color: lightgray;
-    opacity: 50%;
     text-decoration: none;
     bottom: 0;
     width: 99%;
     height: 110px;
     line-height: 2;
+}
+footer text {
+    opacity: 50%;
 }
 
 /* Responsiveness */
