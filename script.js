@@ -22,8 +22,8 @@ function load() {
             + responseJSON.systemram.dimensions.buffers.value;
             
         const ramUsage = responseJSON.systemram.dimensions.used.value;
-        document.getElementById("cpuinfo").innerText = `CPU: ${Math.round(cpuUsage * 100) / 100}%`;
-        document.getElementById("raminfo").innerText = `RAM: ${Math.round((ramUsage / totalRam) * 10000) / 100}%`;   
+        document.getElementById("cpuinfo").innerText = `CPU Usage: ${Math.round(cpuUsage * 100) / 100}%`;
+        document.getElementById("raminfo").innerText = `RAM Usage: ${Math.round((ramUsage / totalRam) * 10000) / 100}%`;   
     }
     xhttp.open("GET", "https://home.such.blue/netdata/api/v1/allmetrics?format=json");
     xhttp.onreadystatechange = () => {
