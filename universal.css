@@ -8,6 +8,7 @@ body {
     overflow: hidden;
 }
 h4 { font-weight: lighter; }
+iframe { height:280px; }
 
 .center {
     margin: 0;
@@ -70,7 +71,7 @@ footer text {
 
 .head {
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 2.5em;
 } .head img {
     margin-right: 1em;
     height: 50px;
