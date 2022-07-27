@@ -1,0 +1,93 @@
+/*
+ * Metro 4 Components Library v4.5.1 made for such.blue (https://metroui.org.ua, https://such.blue)
+ * Copyright 2012-2022 Sergey Pimenov, 2022 SuchBlue
+ * Built on 27/07/2022
+ * Original work licensed under MIT
+ * This version is licensed under EPL-2.0
+ */
+
+html {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
+    font-size: 100%;
+}
+
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-style: normal;
+    font-weight: 400;
+    text-rendering: optimizeSpeed;
+    color: #212121;
+    height: 100vh !important;
+    background-color: #004d6f !important;
+    overflow: hidden;
+}
+
+div {
+    margin: 0;
+padding: 0;
+border: 0;
+vertical-align: baseline;
+}
+
+#mainWindow {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    width: 260px;
+    height: auto;
+    top: 50%;
+    margin-top: -130px;
+    background-color: #ffffff !important;
+    padding: 24px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border: 1px solid;
+    border-color: #dfdfdf !important;
+    -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.text-light { font-weight: 200 !important; }
+.text-medium { font-weight: 500 !important; }
+
+.group {
+    display: block;
+    position: relative;
+}
+.group + .group {
+    margin-top: 1rem;
+}
+
+.input {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    position: relative;
+    border: 1px #d9d9d9 solid;
+    color: #1d1d1d;
+    width: 100%;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    background: #ffffff none;
+    background-clip: border-box;
+    background-clip: padding-box;
+    min-width: 0;
+}
+
+.noborder {
+    width: fit-content;
+    height: auto;
+    border-left: 0;
+    border-top: 0;
+    border-bottom: 0;
+}
