@@ -18,6 +18,12 @@ iframe { height:280px; }
     transform: translate(-50%, -50%);
 }
 
+.draggable {
+    cursor: move;
+    user-select: none;
+    border: 0.5em #004d6f solid;
+}
+
 #music {
     float: right;
     margin-right: 5%;
