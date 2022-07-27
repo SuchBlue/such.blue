@@ -26,9 +26,9 @@ body {
 
 div {
     margin: 0;
-padding: 0;
-border: 0;
-vertical-align: baseline;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
 }
 
 #mainWindow {
