@@ -21,7 +21,7 @@ iframe { height:280px; }
 .draggable {
     cursor: move;
     user-select: none;
-    border: 0.5em #004d6f solid;
+    border: 2em transparent solid;
 }
 
 #music {
