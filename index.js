@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 		let summary = {
 			cpu: cpuPercentage,
 			ram: (Math.round((usedmem / os.totalmem()) * 10000) / 100),
-			cpuFreq: os.cpus()[0].speed / 1000,
+			cpuFreq: (os.cpus()[0].speed / 1000).toFixed(2),
 			usedmem: (usedmem / 1000000000).toFixed(2),
 			totalmem: (os.totalmem() / 1000000000).toFixed(1),
 		}
