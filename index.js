@@ -11,27 +11,34 @@ const limiter = rateLimit({
 	max: 8, // maximum requests per time mentioned above
 	standardHeaders: true,
 	legacyHeaders: false
-})
+});
+
+let cpu = osu.cpu;
+let cpuUsage;
+
+function getCPU() {
+	osu.cpu.usage()
+	.then(cpuPercentage => {
+		cpuUsage = cpuPercentage;
+	});
+}
 
 app.use(limiter);
 app.get('/', (req, res) => {
-    let cpu = osu.cpu;
 	let usedmem = os.totalmem() - os.freemem();
-	cpu.usage()
-	.then(cpuPercentage => {
-		let summary = {
-			cpu: cpuPercentage,
-			ram: (Math.round((usedmem / os.totalmem()) * 10000) / 100),
-			cpuFreq: (os.cpus()[0].speed / 1000).toFixed(2),
-			usedmem: (usedmem / 1000000000).toFixed(2),
-			totalmem: (os.totalmem() / 1000000000).toFixed(1),
-		}
-        res.send(JSON.stringify(summary));
-	}).catch(function() {
-		res.send('An error occured');
-	})
-})
+
+	let summary = {
+		cpu: cpuUsage,
+		ram: (Math.round((usedmem / os.totalmem()) * 10000) / 100),
+		cpuFreq: (os.cpus()[0].speed / 1000).toFixed(2),
+		usedmem: (usedmem / 1000000000).toFixed(2),
+		totalmem: (os.totalmem() / 1000000000).toFixed(1),
+	}
+	res.send(JSON.stringify(summary));
+});
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
-})
+
+  getCPU(); setInterval(getCPU, 5000);
+});
