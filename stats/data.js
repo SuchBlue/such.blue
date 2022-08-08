@@ -1,11 +1,18 @@
+function firstTime() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://home.such.blue/api/setViews");
+    xhttp.send();
+    load();
+}
+
 function load() {
-    const xhttp = new XMLHttpRequest();
+    let xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
         const responseJSON = JSON.parse(this.responseText);
         document.getElementById("cpuStat").innerText = `${responseJSON.cpu}% (${responseJSON.cpuFreq}GHz)`;
         document.getElementById("memStat").innerText = `${responseJSON.usedmem}/${responseJSON.totalmem}GB ${responseJSON.ram}%`;
     }
-    xhttp.open("GET", "https://home.such.blue/stats-api");
+    xhttp.open("GET", "https://home.such.blue/api/stats");
     xhttp.onreadystatechange = () => {
         if (xhttp.readyState !== 4) {
             return;
@@ -20,5 +27,5 @@ function load() {
     };
     xhttp.send();
 }
-load();
+firstTime();
 setInterval(load, 8000);
