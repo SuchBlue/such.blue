@@ -13,7 +13,6 @@ const limiter = rateLimit({
 	legacyHeaders: false
 });
 
-let cpu = osu.cpu;
 let cpuUsage;
 
 function getCPU() {
