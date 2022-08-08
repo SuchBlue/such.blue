@@ -1,17 +1,10 @@
-const rateLimit = require('express-rate-limit');
 const express = require('express');
+const fs = require('fs');
 const app = express();
-const port = 3000
+const port = 3000;
 
 const os = require('os');
-const osu = require('node-os-utils');
-
-const limiter = rateLimit({
-	windowMs: 10000, // in ms
-	max: 8, // maximum requests per time mentioned above
-	standardHeaders: true,
-	legacyHeaders: false
-});
+const osu = require('node-os-utils')
 
 let cpuUsage;
 
@@ -22,8 +15,7 @@ function getCPU() {
 	});
 }
 
-app.use(limiter);
-app.get('/', (req, res) => {
+app.get('//stats', (req, res) => {
 	let usedmem = os.totalmem() - os.freemem();
 
 	let summary = {
@@ -36,8 +28,31 @@ app.get('/', (req, res) => {
 	res.send(JSON.stringify(summary));
 });
 
+app.get('//getViews', (req, res) => {
+	fs.readFile('views', 'utf-8', function(err, data) {
+		if(err) console.log(err);
+		res.send(data);
+	});
+});
+
+app.post('//setViews', (req, res) => {
+	fs.readFile('views', 'utf-8', function(err, data) {
+		if(err) console.log(err);
+
+		fs.writeFile('views', (parseInt(data) + 1).toString(), function(err) {
+			if(err) console.log(err);
+		});
+	});
+});
+
+
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
+  if(!fs.existsSync("views")) {
+  	fs.writeFile('views', '0', function(err) {
+		if(err) console.log(err);
+	})
+  }
 
   getCPU(); setInterval(getCPU, 5000);
 });
