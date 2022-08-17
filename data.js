@@ -18,9 +18,9 @@ function load() {
             return;
         }
         if (xhttp.status === 200) {
-            document.getElementById("status").innerText = "Online";
+            document.getElementById("status").innerText = "Status: Online";
         } else {
-            document.getElementById("status").innerText = "Offline";
+            document.getElementById("status").innerText = "Status: Offline";
             document.getElementById("cpuStat").innerText =
             document.getElementById("memStat").innerText = "Server is down";
         }

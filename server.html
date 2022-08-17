@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>SuchBlue's website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="particles.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>such.blue Server Stats</title>
 </head>
+
 <body>
     <noscript>sorry, you must enable javascript for the site to work properly :(</noscript>
 
@@ -72,31 +75,25 @@
         <div class="particle"></div>
     </div>
 
-    <div class="center">
-        <h1>suchblue.</h1>
-        <a href="https://github.com/SuchBlue/">github</a>
-        <a href="https://youtube.com/SuchBlue/">youtube</a>
-        <a href="" onclick="discord()">discord</a>
-        <a href="https://open.spotify.com/playlist/2lmdpqZb5ymcQ5D2XDyAzw">music i listen to</a>
-        <a href="server.html">server stats</a>
+    <style>body { font-size: 125%; }</style>
 
-        <div id="footer">
-            Made with <3 in 🇲🇹 - See source at
-            <a href="https://github.com/SuchBlue/such.blue" style="color: inherit;">https://github.com/SuchBlue/such.blue</a>
-            <div>Any suggestions? Submit an issue or pull request to contribute to this site!</div>
-            <div id="views"></div>
-            <div id="time"></div>
+    <div class="center">
+        <h2><u>Server stats</u></h2>
+
+        <h2 style="font-size: 100%;" id="status">Status: Offline</h2>
+        <div>
+            <u>CPU</u>
+            <div id="cpuStat">Server is down</div>&nbsp;
         </div>
+        <div>
+            <u>Memory</u>
+            <div id="memStat">Server is down</div>&nbsp;
+        </div>
+
+        <a href="index.html">← Back</a>
     </div>
 
-    <script>
-        function discord() {
-            navigator.clipboard.writeText("SuchBlue#1337");
-            alert("Discord Username and Tag have been copied to clipboard.");
-        }
-    </script>
-    <script type="application/javascript" src="stats.js"></script>
-
-    <!-- credits to https://codepen.io/tutsplus/pen/MrjYJK for the particle animations !-->
+    <script type="application/javascript" src="data.js"></script>
 </body>
+
 </html>
