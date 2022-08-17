@@ -1,0 +1,46 @@
+@import url('http://fonts.googleapis.com/css?family=Marck+Script');
+@import url('fonts/FantasqueSansMono-Regular-decl.css');
+
+body {
+    background-color: rgb(22, 22, 22);
+    color: white;
+    font-family: 'Fantasque Sans Mono', sans-serif;
+    letter-spacing: -0.225px;
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-family: 'Marck Script', sans-serif;
+    font-size: 300%;
+}
+
+a { color: blue; }
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#footer {
+    color: lightgray;
+    text-decoration: none;
+    /* font-style: italic; */
+    margin-top: 2.5em;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 135px;
+    line-height: 2;
+}
+
+/* Responsiveness */
+
+@media screen and (min-width: 692px) {
+    span {
+      line-height: 5;
+    }
+}
