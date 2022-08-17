@@ -1,8 +1,15 @@
 window.onload = function() {
-    let time = new Date().getTime() - window.performance.timing.navigationStart;
-    let seconds = Math.floor(time / 1000);
-    let milliseconds = time % 1000;
-    document.getElementById("time").innerText = `Loaded in ${seconds}.${milliseconds} seconds`;
+    fetch('https://api.github.com/repos/SuchBlue/such.blue/commits', {
+        headers: {
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("vcs").innerText = data[0].sha.slice(0, 7);
+        document.getElementById("vcs").href = data[0].html_url;
+    })
+    .catch(error => console.error(error));
 
     let xhttp = new XMLHttpRequest();
     xhttp.onload = function () {
@@ -10,4 +17,9 @@ window.onload = function() {
     }
     xhttp.open("GET", "https://home.such.blue/api/getViews");
     xhttp.send();
+
+    let time = new Date().getTime() - window.performance.timing.navigationStart;
+    let seconds = Math.floor(time / 1000);
+    let milliseconds = time % 1000;
+    document.getElementById("time").innerText = `Loaded in ${seconds}.${milliseconds} seconds`;
 }
