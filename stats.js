@@ -22,4 +22,5 @@ window.onload = function() {
     let seconds = Math.floor(time / 1000);
     let milliseconds = time % 1000;
     document.getElementById("time").innerText = `Loaded in ${seconds}.${milliseconds} seconds`;
+    document.getElementById("time").style.marginBottom = `${window.innerHeight/4}px`;
 }
