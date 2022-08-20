@@ -7,11 +7,12 @@ body {
     font-family: 'Fantasque Sans Mono', sans-serif;
     letter-spacing: -0.225px;
     text-align: center;
+    font-size: 110%;
 }
 
 h1 {
     font-family: 'Marck Script', sans-serif;
-    font-size: 300%;
+    font-size: 375%;
 }
 
 a { color: blue; }
