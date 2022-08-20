@@ -36,11 +36,3 @@ a { color: blue; }
     height: 135px;
     line-height: 2;
 }
-
-/* Responsiveness */
-
-@media screen and (min-width: 692px) {
-    span {
-      line-height: 5;
-    }
-}
