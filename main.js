@@ -1,4 +1,8 @@
-import addView from './data';
+function addView() {
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "https://home.such.blue/api/setViews");
+    xhttp.send();
+}
 
 window.onload = function() {
     fetch('https://api.github.com/repos/SuchBlue/such.blue/commits', {
