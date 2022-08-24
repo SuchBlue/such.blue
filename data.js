@@ -1,4 +1,4 @@
-function firstTime() {
+export function addView() {
     let xhttp = new XMLHttpRequest();
     xhttp.open("POST", "https://home.such.blue/api/setViews");
     xhttp.send();
@@ -27,5 +27,5 @@ function load() {
     };
     xhttp.send();
 }
-firstTime();
+
 setInterval(load, 8000);
