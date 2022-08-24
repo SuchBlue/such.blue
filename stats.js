@@ -1,3 +1,5 @@
+import addView from './data';
+
 window.onload = function() {
     fetch('https://api.github.com/repos/SuchBlue/such.blue/commits', {
         headers: {
@@ -23,4 +25,6 @@ window.onload = function() {
     let milliseconds = time % 1000;
     document.getElementById("time").innerText = `Loaded in ${seconds}.${milliseconds} seconds`;
     document.getElementById("time").style.marginBottom = `${window.innerHeight/4}px`;
+
+    addView();
 }
