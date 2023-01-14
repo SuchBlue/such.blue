@@ -1,6 +1,6 @@
 function addView() {
     let xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://home.such.blue/api/setViews");
+    xhttp.open("POST", "https://cloud.such.blue/api/setViews");
     xhttp.send();
 }
 
@@ -21,7 +21,7 @@ window.onload = function() {
     xhttp.onload = function () {
         document.getElementById("views").innerText = `This site has been visited for ${this.responseText} times`;
     }
-    xhttp.open("GET", "https://home.such.blue/api/getViews");
+    xhttp.open("GET", "https://cloud.such.blue/api/getViews");
     xhttp.send();
 
     let time = new Date().getTime() - window.performance.timing.navigationStart;
