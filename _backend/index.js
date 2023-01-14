@@ -1,10 +1,10 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
-const port = 3000;
+const port = 5000;
 
 const os = require('os');
-const osu = require('node-os-utils')
+const osu = require('node-os-utils');
 
 let cpuUsage;
 
