@@ -4,8 +4,7 @@
   "description": "An API for such.blue to show server stats",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.18.1",
-    "node-os-utils": "^1.3.7"
+    "express": "^4.18.1"
   },
   "scripts": {
     "start": "node ."
