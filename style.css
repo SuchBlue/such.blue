@@ -15,7 +15,10 @@ h1 {
     font-size: 365%;
 }
 
-a { color: blue; }
+a {
+    color: blue;
+    margin: 0.35em; 
+}
 
 .center {
     margin: 0;
