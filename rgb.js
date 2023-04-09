@@ -4,16 +4,25 @@ animation: colorchange 20s infinite alternate;
 -webkit-animation: colorchange 20s infinite alternate;
 `
 
+function addRGB() {
+    document.body.style += rgbCSS;
+    document.getElementById("footer").style += rgbCSS;
+}
+function removeRGB() {
+    document.body.style -= rgbCSS;
+    document.getElementById("footer").style -= rgbCSS;
+}
+
+addRGB();
+
 btn.addEventListener('click', function handleClick() {
-    const initialText = 'off';
+    const initialText = 'on';
   
     if (btn.textContent.toLowerCase().includes(initialText.toLowerCase())) {
-      btn.textContent = 'on';
-      document.body.style += rgbCSS;
-      document.getElementById("footer").style += rgbCSS;
+      removeRGB();
+      btn.textContent = 'off';
     } else {
+      addRGB();
       btn.textContent = initialText;
-      document.body.style -= rgbCSS;
-      document.getElementById("footer").style -= rgbCSS;
     }
   });
