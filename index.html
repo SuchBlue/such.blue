@@ -3,6 +3,7 @@
 <head>
     <title>SuchBlue's website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="rgb.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="particles.css">
 </head>
@@ -72,6 +73,15 @@
         <div class="particle"></div>
     </div>
 
+    <div style="
+            position: fixed;
+            top: 0.1;
+            right: 0;
+            margin: 0.5%;
+            font-family: 'San Francisco', sans-serif;
+            text-decoration: none;
+        "><span>rgb mode: </span><button id="rgb">off</button></div>
+
     <div class="center">
         <h1>suchblue.</h1>
         <a href="https://github.com/SuchBlue/">github</a>
@@ -106,6 +116,7 @@
             alert("Discord Username and Tag have been copied to clipboard.");
         }
     </script>
+    <script type="application/javascript" src="rgb.js"></script>
     <script type="application/javascript" src="main.js"></script>
 
     <!-- credits to https://codepen.io/tutsplus/pen/MrjYJK for the particle animations !-->
