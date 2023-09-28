@@ -21,6 +21,8 @@ a {
     margin: 0.35em; 
 }
 
+.no-text-dec { text-decoration: none; }
+
 .center {
     margin: 0;
     position: absolute;
