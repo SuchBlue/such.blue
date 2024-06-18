@@ -31,7 +31,7 @@ btn.addEventListener('click', function handleClick() {
       spamTimes += 1;
       if(spamTimes == 1) return;
       let views = document.getElementById("views");
-      if(views) (parseInt(views.innerText) += 1).toString();
+      if(views) views.innerText = (parseInt(views.innerText) += 1).toString();
     }
     last_clicked = Date.now();
   });
