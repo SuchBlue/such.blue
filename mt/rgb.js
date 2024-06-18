@@ -1,3 +1,4 @@
+let last_clicked = spamTimes = 0;
 let btn = document.getElementById("rgb");
 let rgbCSS = `
 animation: colorchange 20s infinite alternate;
@@ -25,4 +26,16 @@ btn.addEventListener('click', function handleClick() {
       addRGB();
       btn.textContent = initialText;
     }
+
+    if (Date.now() - last_clicked < 500) {
+      spamTimes += 1;
+      if(spamTimes == 1) return;
+      let views = document.getElementById("views");
+      if(views) {
+        let viewsText = parseInt(views.innerText);
+        viewsText += 1;
+        views.innerText = viewsText;
+      }
+    }
+    last_clicked = Date.now();
   });
