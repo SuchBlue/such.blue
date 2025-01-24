@@ -21,6 +21,15 @@ a {
     margin: 0.35em; 
 }
 
+#rgbButton {
+    position: fixed;
+    top: 0.1;
+    right: 0;
+    margin: 0.5%;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+}
+
 .no-text-dec { text-decoration: none; }
 
 .center {
@@ -34,11 +43,20 @@ a {
 #footer {
     color: lightgray;
     text-decoration: none;
-    /* font-style: italic; */
+    font-style: italic;
     margin-top: 2.5em;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 135px;
     line-height: 2;
+}
+
+#versioncontrol {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0.5%;
+    opacity: 0.325;
+    font-style: italic;
 }

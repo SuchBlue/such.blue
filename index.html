@@ -9,7 +9,7 @@
 </head>
 <body>
     <noscript>sorry, you must enable javascript for the site to work properly :(</noscript>
-
+    
     <div id="particle-container">
         <div class="particle"></div>
         <div class="particle"></div>
@@ -72,44 +72,39 @@
         <div class="particle"></div>
         <div class="particle"></div>
     </div>
-
-    <div class="no-text-dec" style="
-            position: fixed;
-            top: 0.1;
-            right: 0;
-            margin: 0.5%;
-            font-weight: 700;
-            font-family: 'Roboto', sans-serif;
-        "><span>rgb mode: </span><button id="rgb">on</button></div>
-
+    
+    <div id="rgbButton" class="no-text-dec">
+        <span>rgb mode: </span>
+        <button id="rgb">on</button>
+    </div>
+    
     <div class="center">
         <h1>suchblue.</h1>
-
+        
         <div id="footer">
             Made with <3 in 🇲🇹 - See source at
             <a href="https://github.com/SuchBlue/such.blue" style="color: inherit; margin: 0;">https://github.com/SuchBlue/such.blue</a>
             <div>Any suggestions? Submit an issue or pull request to contribute to this site!</div>
             <div id="viewsParent">This site has been visited for <u id="views"></u> times</div>
             <div>Loaded in <u id="time"></u> seconds</div>
-            <a class="no-text-dec" href="https://such.blue/">english</a> | <a class="no-text-dec" href="https://such.blue/de">deutsch</a>
-            | <a class="no-text-dec" href="https://such.blue/nl">nederlands</a> | <a class="no-text-dec" href="https://such.blue/mt">malti</a>
         </div>
-
+        
+        <div style="margin-top: 2.5em">
+            <a class="no-text-dec" href="https://such.blue/">english</a>
+            | <a class="no-text-dec" href="https://such.blue/de">deutsch</a>
+            | <a class="no-text-dec" href="https://such.blue/nl">nederlands</a>
+            | <a class="no-text-dec" href="https://such.blue/mt">malti</a>
+        </div>
+        
     </div>
-
-    <div style="
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            margin: 0.5%;
-        "><img src="res/versioncontrol.png"><a class="no-text-dec" style="
-            opacity: 0.5;
-            color: lightgray;
-        " id="vcs"></a></div>
-
+    
+    <div id="versioncontrol">
+        <a class="no-text-dec" style="color: lightgray;" id="vcs"></a>
+    </div>
+    
     <script type="application/javascript" src="rgb.js"></script>
     <script type="application/javascript" src="main.js"></script>
-
+    
     <!-- credits to https://codepen.io/tutsplus/pen/MrjYJK for the particle animations !-->
 </body>
 </html>
