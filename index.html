@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="rgb.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="particles.css">
+    <script src="https://unpkg.com/@andreasremdt/simple-translator@latest/dist/umd/translator.min.js" defer ></script>
+    <script src="translate.js" defer ></script>
 </head>
 <body>
     <noscript>sorry, you must enable javascript for the site to work properly :(</noscript>
@@ -74,26 +76,36 @@
     </div>
     
     <div id="rgbButton" class="no-text-dec">
-        <span>rgb mode: </span>
-        <button id="rgb">on</button>
+        <span data-i18n="rgb.mode">rgb mode: </span>
+        <button data-i18n="rgb.button-on" id="rgb" onclick="setTimeout(refreshTranslation, 1)">on</button>
     </div>
     
     <div class="center">
         <h1>suchblue.</h1>
         
         <div id="footer">
-            Made with <3 in 🇲🇹 - See source at
+            <span data-i18n="footer.first">Made with love in</span>
+            <span style="font-style: normal; margin-left: 0.5%">🇲🇹</span>
+            <span data-i18n="footer.second"> - See source at</span>
             <a href="https://github.com/SuchBlue/such.blue" style="color: inherit; margin: 0;">https://github.com/SuchBlue/such.blue</a>
-            <div>Any suggestions? Submit an issue or pull request to contribute to this site!</div>
-            <div id="viewsParent">This site has been visited for <u id="views"></u> times</div>
-            <div>Loaded in <u id="time"></u> seconds</div>
-        </div>
-        
-        <div style="margin-top: 2.5em">
-            <a class="no-text-dec" href="https://such.blue/">english</a>
-            | <a class="no-text-dec" href="https://such.blue/de">deutsch</a>
-            | <a class="no-text-dec" href="https://such.blue/nl">nederlands</a>
-            | <a class="no-text-dec" href="https://such.blue/mt">malti</a>
+            <div data-i18n="footer.third">Any suggestions? Submit an issue or pull request to contribute to this site!</div>
+            <div id="viewsParent">
+                <span data-i18n="footer.views">This site has been visited for</span>
+                <u id="views"></u>
+                <span data-i18n="footer.times">times</span>
+            </div>
+            <div>
+                <span data-i18n="footer.load">Loaded in</span>
+                <u id="time"></u>
+                <span data-i18n="footer.seconds">seconds</span>
+            </div>
+
+            <div style="margin-top: 2.5em; font-style: normal">
+                <button class="langBtn" onclick="translateTo('en')">english</button>
+                | <button class="langBtn" onclick="translateTo('de')">deutsch</button>
+                | <button class="langBtn" onclick="translateTo('nl')">nederlands</button>
+                | <button class="langBtn" onclick="translateTo('mt')">malti</button>
+            </div>
         </div>
         
     </div>

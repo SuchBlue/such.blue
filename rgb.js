@@ -8,23 +8,24 @@ animation: colorchange 20s infinite alternate;
 function addRGB() {
     document.body.style += rgbCSS;
     document.getElementById("footer").style += rgbCSS;
+    btn.attributes["data-i18n"].textContent = "rgb.button-on";
 }
 function removeRGB() {
     document.body.style -= rgbCSS;
     document.getElementById("footer").style -= rgbCSS;
+    btn.attributes["data-i18n"].textContent = "rgb.button-off";
 }
 
 addRGB();
 
 btn.addEventListener('click', function handleClick() {
-    const initialText = 'on';
-  
-    if (btn.textContent.toLowerCase().includes(initialText.toLowerCase())) {
-      removeRGB();
-      btn.textContent = 'off';
-    } else {
-      addRGB();
-      btn.textContent = initialText;
+    switch (btn.attributes["data-i18n"].textContent) {
+      case "rgb.button-on":
+        removeRGB();
+        break;
+      case "rgb.button-off":
+        addRGB();
+        break;
     }
     
     if (Date.now() - last_clicked < 500) {
