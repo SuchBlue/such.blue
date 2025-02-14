@@ -43,6 +43,11 @@ a {
 }
 
 .no-text-dec { text-decoration: none; }
+.siteBtn {
+    font-size: medium;
+    margin-top: 0.5em;
+    white-space: pre;
+}
 
 .center {
     margin: 0;
